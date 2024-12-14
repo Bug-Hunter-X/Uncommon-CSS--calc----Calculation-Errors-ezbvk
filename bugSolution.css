@@ -1,0 +1,29 @@
+/* bugSolution.css */
+/* Addressing Inconsistent Units */
+.container {
+  width: calc(100% - 20px); /* Consistent px units */
+}
+
+/* Simplifying Complex Expressions */
+.element {
+  width: calc( (100vw - 20px) / 2 ); /* Break down complex expressions */
+}
+
+/*Using Variables for readability*/
+:root {
+  --sidebar-width: 200px;
+}
+.content {
+ width: calc(100% - var(--sidebar-width));
+}
+
+/* Avoid nesting too many calc functions*/
+.nested {
+  width: 200px;
+  margin-left: calc(10%);
+  margin-right: calc(10%);
+}
+/*The above is better than using nested calc in one line*/
+/*.nested {
+  width: calc(calc(200px + 10%) + 10%);
+}*/
